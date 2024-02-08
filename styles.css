@@ -1,0 +1,107 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.heart-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    animation: heartAnimation 5s infinite alternate ease-in-out;
+}
+
+@keyframes heartAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.heart:hover {
+    animation-play-state: paused;
+}
+
+#center-heart {
+    position: absolute;
+    top: 50%;
+    /* Adjusted position */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#main-heart {
+    width: 220px;
+    height: 220px;
+    animation: heartbeat 1.5s infinite alternate;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.love-message {
+    position: relative;
+    bottom: 1px;
+    /* Adjusted position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: cursive;
+    /* Set the font-family to cursive */
+}
+
+.love-message p {
+    font-size: 1.8em;
+    color: red;
+    margin: 10px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .heart {
+        width: 20px;
+        height: 20px;
+    }
+
+    #main-heart {
+        width: 80px;
+        height: 80px;
+    }
+
+    .love-message p {
+        font-size: 1.2em;
+    }
+}
